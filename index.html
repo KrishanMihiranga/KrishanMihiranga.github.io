@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="icon" href="Assets/icon.png" type="image/x-icon">
     <title>Krishan.Portfolio</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
@@ -39,7 +39,7 @@
     </div>
 
     <div class="home-img">
-        <img src="home.png">
+        <img src="Assets/home.png">
     </div>
     </section>
 
@@ -48,7 +48,7 @@
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="home.png">
+                <img src="Assets/home.png">
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
@@ -123,34 +123,66 @@
 <div id="portfolio">
     <div class="container">
         <h1 class="sub-title">My Work</h1>
-        <div class="work-list">
-            <div class="work">
-                <img src="home.png">
-                <div class="layer">
-                    <h3>Social Media App</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem corporis, ad inventore quas omnis labore sint dolorum amet officiis molestiae. Optio necessitatibus inventore quo iste iusto ut doloribus beatae natus?</p>
-                    <a href="#"><i class='bx bx-link-external'></i></a>
+        <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('html')">Html/Css/Js</p>
+            <p class="tab-links" onclick="opentab('java')">Java</p>
+            <p class="tab-links" onclick="opentab('reactntv')">React Native</p>
+        </div>
+        
+        <div class="tab-contents active-tab" id="html">
+            <div class="container">
+                <div class="work-list">
+                    <div class="work">
+                        <img src="Assets/animatedprofilecard.png">
+                        <div class="layer">
+                            <h3> Animated Profile card</h3>
+                            <p>My animated profile card, created using HTML and CSS, is a visually stunning and interactive design that showcases my skills and experience. With its modern layout and eye-catching animations. <br>Check it out for yourself and see what sets my animated profile card apart!</p>
+                            <a href="https://codepen.io/Mkrishan/pen/OJoyRBd" target="_blank"><i class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+
+                    <div class="work">
+                        <img src="Assets/animatedprofilecard.png">
+                        <div class="layer">
+                            <h3>Animated Profile card</h3>
+                            <p>My animated profile card, created using HTML and CSS, is a visually stunning and interactive design that showcases my skills and experience. With its modern layout and eye-catching animations. <br>Check it out for yourself and see what sets my animated profile card apart!</p>
+                            <a href="#"><i class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+
+                    <div class="work">
+                        <img src="Assets/animatedprofilecard.png">
+                        <div class="layer">
+                            <h3>Animated Profile card</h3>
+                            <p>My animated profile card, created using HTML and CSS, is a visually stunning and interactive design that showcases my skills and experience. With its modern layout and eye-catching animations. <br>Check it out for yourself and see what sets my animated profile card apart!</p>
+                            <a href="#"><i class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+                    
                 </div>
-            </div>
-            <div class="work">
-                <img src="home.png">
-                <div class="layer">
-                    <h3>Music App</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem corporis, ad inventore quas omnis labore sint dolorum amet officiis molestiae. Optio necessitatibus inventore quo iste iusto ut doloribus beatae natus?</p>
-                    <a href="#"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="home.png">
-                <div class="layer">
-                    <h3>Online Shopping App</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem corporis, ad inventore quas omnis labore sint dolorum amet officiis molestiae. Optio necessitatibus inventore quo iste iusto ut doloribus beatae natus?</p>
-                    <a href="#"><i class='bx bx-link-external'></i></a>
-                </div>
+
             </div>
         </div>
-        <a href="#" class="wBtn">See more</a>
-    </div>
+
+
+        <div class="tab-contents" id="java">
+            <div class="container">
+                <div class="work-list">
+                    
+                </div>
+
+            </div>
+        </div>
+
+        <div class="tab-contents" id="reactntv">
+            <div class="container">
+                <div class="work-list">
+                   
+
+                </div>
+
+            </div>
+        </div>
 </div>
 
 <!-----contact----->
@@ -181,6 +213,7 @@
 </div>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyBsQNGFXte8dBsntQlVzFsf4ImMaKBOnbPC428S8u5UGWDpAj38qjobWg3XMmvJyGx/exec'
         const form = document.forms['submit-to-google-sheet']
