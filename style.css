@@ -7,13 +7,17 @@
     font-family: 'poppins', sans-serif;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background: #1f242d;
     color: #fff;
 }
 
 .header{
-    position: fixed;
+    position: none;
     top: 0;
     left: 0;
     width: 100%;
@@ -226,6 +230,15 @@ body{
 }
 
 /*----about-----*/
+.about-col-2 h1{
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: none;
+}
+
 #about{
     padding: 80px 10%;
     color: #fff;
@@ -292,6 +305,14 @@ body{
 }
 
 /*---------services---------*/
+.container h1{
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: none;
+}
 
 #services{
     padding: 80px 10%;
@@ -328,6 +349,7 @@ body{
 }
 .services-list div:hover{
     background-color: #0ef;
+    color: #1f242d;
     transform: translateY(-10px);
 }
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/x-icon">
     <title>Krishan.Portfolio</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
@@ -14,10 +15,10 @@
 
         <nav class="navbar">
             <a href="#" style="--i:1" class="active">Home</a>
-            <a href="#" style="--i:2">About</a>
-            <a href="#" style="--i:3">Services</a>
-            <a href="#" style="--i:4">Portfolio</a>
-            <a href="#" style="--i:5">Contact</a>
+            <a href="#about" style="--i:2">About</a>
+            <a href="#services" style="--i:3">Services</a>
+            <a href="#portfolio" style="--i:4">Portfolio</a>
+            <a href="#contact" style="--i:5">Contact</a>
         </nav>
     </header>
     <section class="home">
@@ -34,7 +35,7 @@
             <a href="#" style="--i:9;" id="instagram"><i class='bx bxl-instagram' ></i></a>
             <a href="#" style="--i:10;" id="linkedIn"><i class='bx bxl-linkedin' ></i></a>
         </div>
-        <a href="#" class="btn">Download CV</a>
+        <a href="test.txt" download class="btn">Download CV</a>
     </div>
 
     <div class="home-img">
@@ -51,7 +52,8 @@
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aperiam at quam atque libero amet quaerat quae, deleniti odio. Aut et consectetur delectus veniam quo rem assumenda culpa quidem iure.
+                <p>
+                    As a passionate software engineering student, I specialize in Java and am constantly seeking opportunities to expand my knowledge and skills. With a commitment to using technology to make a positive impact on society, I believe in pushing myself to grow and improve as a developer. Whether you're interested in collaborating on a project or discussing the latest trends in software engineering, I'm always up for a challenge and excited to connect with like-minded professionals.
 
                 </p>
                 
@@ -160,13 +162,11 @@
                 <p><i class='bx bx-send' ></i> xp3cto95@gmail.com</p>
                 <p><i class='bx bx-phone'></i> 0774512029</p>
 
-                <a href="test.txt" download class="wBtn bnt2">Download CV</a>
-
             </div>
             <div class="contact-right">
-                <form>
+                <form name="submit-to-google-sheet">
                     <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="wBtn btn2">Submit</button>
                 </form>
@@ -181,5 +181,23 @@
 </div>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyBsQNGFXte8dBsntQlVzFsf4ImMaKBOnbPC428S8u5UGWDpAj38qjobWg3XMmvJyGx/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
 </html>
